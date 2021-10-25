@@ -1,5 +1,21 @@
-"""  """    
+"""
+Ball draw probability calculator module
 
+This module contains an experiment function that determines the probability of drawing specific balls of different colors from a hat. 
+The experiment function acts as a probability calculator allows the user to calculate the approximate probability of drawing at least 
+a certain number of different colored balls randomly from a hat. The user can specify the number of experiments, the number balls drawn, 
+as well as the number and variety of the balls in the hat when checking the probability that a certain set of balls will be drawn.
+This function is based on the urn problem (https://en.wikipedia.org/wiki/Urn_problem) with hypergeometric distribution, i.e.
+the balls are not returned to the urn once extracted.
+
+Classes:
+    Hat
+
+Functions:
+    experiment
+"""    
+
+import unittest
 import copy
 import random
 import collections 
@@ -95,3 +111,6 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
   probability = balls_match_count / num_experiments
   return probability 
 
+
+if __name__ == "__main__":
+  unittest.main(module='test_module', exit=False)
